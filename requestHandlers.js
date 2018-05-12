@@ -1,5 +1,6 @@
-const exec = require('child_process').exec;
+// const exec = require('child_process').exec;
 const querystring = require('querystring');
+const fs = require('fs');
 
 const textareaTemplate = require('./textareaTemplate');
 
@@ -52,9 +53,19 @@ function upload(response, postData) {
 	response.writeHead(200, {
 		"Content-Type": "text/plain"
 	});
-	response.write(`Hello Upload ${querystring.parse(postData).text}`);
+	response.write(`You've sent the text: ${querystring.parse(postData).text}`);
 	response.end();
+}
+
+function show(response) {
+	console.log('Request handler `show` was called.')
+
+	response.writeHead(200, {
+		"Content-Type": "image/png"
+	});
+	fs.createReadStream('/tmp/test.png').pipe(response);
 }
 
 exports.start = start;
 exports.upload = upload;
+exports.show = show;

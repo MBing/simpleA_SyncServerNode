@@ -38,7 +38,7 @@ function start(response) {
 		maxBuffer: 20000*1024
 	}, function (error, stdout, stderr) {
 		response.writeHead(200, {
-			"Content-Type": "text/plain"
+			"Content-Type": "text/html"
 		});
 		response.write(textareaTemplate.body);
 		response.end();

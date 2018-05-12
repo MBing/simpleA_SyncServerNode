@@ -3,8 +3,8 @@ const querystring = require('querystring');
 const fs = require('fs');
 const formidable = require('formidable');
 
-// const textareaTemplate = require('./textareaTemplate');
-const imageHTMLTemplate = require('./imageHTMLTemplate');
+// const textareaTemplate = require('../templates/textareaTemplate');
+const imageHTMLTemplate = require('../templates/imageHTMLTemplate');
 
 // function sleep(ms) {
 // 	const startTime = new Date().getTime();
